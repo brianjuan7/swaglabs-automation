@@ -1,0 +1,41 @@
+30-April-2024 09:52:45PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:52:45PM INFO - get_add_to_cart_button: Sauce Labs Bike Light added to cart.
+30-April-2024 09:52:45PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:52:46PM INFO - get_add_to_cart_button: Sauce Labs Backpack added to cart.
+30-April-2024 09:57:08PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:57:09PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:57:21PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:57:21PM INFO - get_add_to_cart_button: Sauce Labs Bike Light added to cart.
+30-April-2024 09:57:21PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:57:21PM INFO - get_add_to_cart_button: Sauce Labs Backpack added to cart.
+30-April-2024 09:57:34PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:57:34PM INFO - get_add_to_cart_button: Sauce Labs Backpack added to cart.
+30-April-2024 09:57:46PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:57:46PM INFO - get_add_to_cart_button: Sauce Labs Bike Light added to cart.
+30-April-2024 09:57:46PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:57:46PM INFO - get_add_to_cart_button: Sauce Labs Backpack added to cart.
+30-April-2024 09:57:58PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:57:58PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:58:11PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:58:11PM INFO - get_add_to_cart_button: Sauce Labs Bike Light added to cart.
+30-April-2024 09:58:11PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:58:11PM INFO - get_add_to_cart_button: Sauce Labs Backpack added to cart.
+30-April-2024 09:58:24PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:58:24PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:58:36PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:58:36PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:58:49PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 09:58:49PM INFO - get_add_to_cart_button: Test.allTheThings() T-Shirt (Red) added to cart.
+30-April-2024 09:59:01PM INFO - test_successful_login: User successfully logged in.
+30-April-2024 09:59:13PM INFO - test_failed_login_invalid_credentials: Error correctly displayed: Epic sadface: Username and password do not match any user in this service
+30-April-2024 09:59:25PM INFO - test_failed_login_no_username: Error correctly displayed: Epic sadface: Username is required
+30-April-2024 09:59:37PM INFO - test_failed_login_no_password: Error correctly displayed: Epic sadface: Password is required
+30-April-2024 09:59:49PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 10:00:01PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 10:00:02PM INFO - test_successful_product_sort_by_name_asc: Products list was successfully sorted by: Name (A to Z)
+30-April-2024 10:00:14PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 10:00:14PM INFO - test_successful_product_sort_by_name_desc: Products list was successfully sorted by: Name (Z to A)
+30-April-2024 10:00:26PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 10:00:27PM INFO - test_successful_product_sort_by_price_asc: Products list was successfully sorted by: Price (low to high)
+30-April-2024 10:00:39PM INFO - initialize_with_login: User successfully logged in.
+30-April-2024 10:00:39PM INFO - test_successful_product_sort_by_price_desc: Products list was successfully sorted by: Price (high to low)
