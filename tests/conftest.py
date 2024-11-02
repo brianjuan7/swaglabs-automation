@@ -1,13 +1,9 @@
 import time
-import pytest
+from datetime import date
 
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from selenium.webdriver.edge.service import Service as EdgeService
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+import pytest
+import pytest_html
+
 from data import User
 from data.Application import URL
 from pages.CartPage import CartPage
@@ -16,7 +12,7 @@ from pages.LoginPage import LoginPage
 from pages.NavigationMenu import NavigationMenu
 from pages.ProductPage import ProductsPage
 from utilities import Logger
-
+from selenium import webdriver
 
 global_driver = None
 
@@ -29,13 +25,13 @@ def initialize_driver(request):
     # Select the appropriate browser based on the command line input
     browser = request.config.getoption("browser")
     if browser == "chrome":
-        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+        driver = webdriver.Chrome()
         pass
     elif browser == "firefox":
-        driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+        driver = webdriver.Firefox()
         pass
     elif browser == "edge":
-        driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+        driver = webdriver.Edge()
         pass
     else:
         message = f"Test terminated. Invalid browser: {browser}"
@@ -93,3 +89,23 @@ def pages():
              "cart_page": CartPage(global_driver),
              "checkout_page": CheckoutPage(global_driver)}
     return pages
+
+
+def pytest_html_report_title(report):
+    report.title = "Swag Labs Automation"
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport():
+    outcome = yield
+    report = outcome.get_result()
+    extras = getattr(report, "extras", [])
+
+    if report.when == "call":
+        xfail = hasattr(report, "wasxfail")
+        if (report.skipped and xfail) or (report.failed and not xfail):
+            # Take a screenshot on failure, then attach to the report
+            file_name = f"{report.nodeid.split("::")[2]}-FAILED_{date.today().strftime("%d-%m-%Y")}"
+            global_driver.save_screenshot(f"resources/screenshots/{file_name}.png")
+            extras.append(pytest_html.extras.png(global_driver.get_screenshot_as_base64()))
+        report.extras = extras
