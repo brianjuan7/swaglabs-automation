@@ -151,8 +151,9 @@ class TestCheckout:
         input_checkout_information(pages, "", User.LAST_NAME, User.POSTAL_CODE)
 
         # Verify if the error message was displayed
-        assert Messages.firstname_required in pages["checkout_page"].get_error_message().text, (
-            Messages.firstname_required_not_displayed)
+        error = pages["checkout_page"].get_error_message().text
+        assert Messages.firstname_required in error, Messages.firstname_required_not_displayed
+        Logger.get_logger().info(Messages.error_is_displayed + error)
 
     def test_failed_checkout_no_lastname(self, pages):
         # Add an item to the cart
@@ -162,8 +163,9 @@ class TestCheckout:
         input_checkout_information(pages, User.FIRST_NAME, "", User.POSTAL_CODE)
 
         # Verify if the error message was displayed
-        assert Messages.lastname_required in pages["checkout_page"].get_error_message().text, (
-            Messages.lastname_required_not_displayed)
+        error = pages["checkout_page"].get_error_message().text
+        assert Messages.lastname_required in error, Messages.lastname_required_not_displayed
+        Logger.get_logger().info(Messages.error_is_displayed + error)
 
     def test_failed_checkout_no_zip_code(self, pages):
         # Add an item to the cart
@@ -173,5 +175,6 @@ class TestCheckout:
         input_checkout_information(pages, User.FIRST_NAME, User.LAST_NAME, "")
 
         # Verify if the error message was displayed
-        assert Messages.postalcode_required in pages["checkout_page"].get_error_message().text, (
-            Messages.postal_required_not_displayed)
+        error = pages["checkout_page"].get_error_message().text
+        assert Messages.postalcode_required in error, Messages.postal_required_not_displayed
+        Logger.get_logger().info(Messages.error_is_displayed + error)
